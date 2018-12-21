@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        version="3.2"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd">
+    
+    <enterprise-beans>
+        <session>
+            <ejb-name>HelloWorldEJB</ejb-name>
+            <home>ru.interfaceukc.javaee.helloejb.ejb21.HelloRemoteHome</home>
+            <remote>ru.interfaceukc.javaee.helloejb.ejb21.HelloRemote</remote>
+            <local-home>ru.interfaceukc.javaee.helloejb.ejb21.HelloLocalHome</local-home>
+            <local>ru.interfaceukc.javaee.helloejb.ejb21.HelloLocal</local>
+            <ejb-class>ru.interfaceukc.javaee.helloejb.ejb21.HelloBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+    </enterprise-beans>
+</ejb-jar>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <description>My First Servlet</description>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>ru.interfaceukc.javaee.servlets.HelloServlet</servlet-class>
+        <init-param>
+            <param-name>initStr</param-name>
+            <param-value>Hello World!</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>JdbcServlet</servlet-name>
+        <servlet-class>ru.interfaceukc.javaee.servlets.JdbcServlet</servlet-class>
+        <init-param>
+            <param-name>jdbcDriver</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcUrl</param-name>
+            <param-value>jdbc:derby://localhost:1527/sample</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcUsername</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcPassword</param-name>
+            <param-value>app</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JdbcServlet</servlet-name>
+        <url-pattern>/jdbc</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
