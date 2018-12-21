@@ -1,11 +1,11 @@
 ru\interfaceukc\javaee\model\MicroMarket.class
 ru\interfaceukc\javaee\ws\rest\DiscountCodeFacadeREST.class
 ru\interfaceukc\javaee\ws\rest\MicroMarketFacadeREST.class
-ru\interfaceukc\javaee\ws\rest\AbstractFacade.class
-ru\interfaceukc\javaee\model\Customer_.class
-ru\interfaceukc\javaee\ws\rest\CustomerFacadeREST.class
 ru\interfaceukc\javaee\model\MicroMarket_.class
 ru\interfaceukc\javaee\model\DiscountCode.class
 ru\interfaceukc\javaee\ws\rest\ApplicationConfig.class
-ru\interfaceukc\javaee\model\Customer.class
 ru\interfaceukc\javaee\model\DiscountCode_.class
+ru\interfaceukc\javaee\ws\rest\AbstractFacade.class
+ru\interfaceukc\javaee\model\Customer_.class
+ru\interfaceukc\javaee\ws\rest\CustomerFacadeREST.class
+ru\interfaceukc\javaee\model\Customer.class

@@ -20,7 +20,8 @@ import javax.ws.rs.ext.Provider;
  * @author Администратор
  */
 @Provider
-public class ServerLoggingFilter implements ContainerRequestFilter, ContainerResponseFilter {
+public class ServerLoggingFilter 
+        implements ContainerRequestFilter, ContainerResponseFilter {
 
     private static final Logger LOG = Logger.getLogger(ServerLoggingFilter.class.getName());
     
@@ -30,8 +31,8 @@ public class ServerLoggingFilter implements ContainerRequestFilter, ContainerRes
         String uri = crc.getUriInfo().getAbsolutePath().toString();
         LOG.log(Level.INFO, "URI: {0}; Method: {1}", new Object[]{uri, method});
         for (String key : crc.getHeaders().keySet()) {
-            List<String> value = crc.getHeaders().get(key);
-            LOG.log(Level.INFO, "{0}={1}", new Object[]{key, value});
+            List<String> values = crc.getHeaders().get(key);
+            LOG.log(Level.INFO, "{0} = {1}", new Object[]{key, values});
         }
     }
 
@@ -39,11 +40,12 @@ public class ServerLoggingFilter implements ContainerRequestFilter, ContainerRes
     public void filter(ContainerRequestContext crc, ContainerResponseContext crc1) throws IOException {
         String method = crc.getMethod();
         String uri = crc.getUriInfo().getAbsolutePath().toString();
-        LOG.log(Level.INFO, "For request URI: {0}; Method: {1}", new Object[]{uri, method});
+        LOG.log(Level.INFO, "For Request URI: {0}; Method: {1}", new Object[]{uri, method});
         LOG.log(Level.INFO, "Response: ");
         for (String key : crc.getHeaders().keySet()) {
-            List<String> value = crc.getHeaders().get(key);
-            LOG.log(Level.INFO, "{0}={1}", new Object[]{key, value});
+            List<String> values = crc.getHeaders().get(key);
+            LOG.log(Level.INFO, "{0} = {1}", new Object[]{key, values});
         }
     }
+    
 }

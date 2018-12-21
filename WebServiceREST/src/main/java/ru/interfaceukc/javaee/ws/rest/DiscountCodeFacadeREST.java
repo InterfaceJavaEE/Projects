@@ -60,16 +60,13 @@ public class DiscountCodeFacadeREST extends AbstractFacade<DiscountCode> {
     public DiscountCode find(@PathParam("id") String id) {
         return super.find(id);
     }
-    
-    @GET
+
     @Path("{id}/customers")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Collection<Customer> customers(@PathParam("id") String id) {
+    public CustomerSubResource findCustomers(@PathParam("id") String id) {
         DiscountCode discountCode = super.find(id);
-        if (discountCode == null) {
-            return new ArrayList<>();
-        }
-        return discountCode.getCustomerCollection();
+//        if (discountCode == null)
+//            return new ArrayList<>();
+        return new CustomerSubResource(discountCode, getEntityManager());
     }
 
     @GET

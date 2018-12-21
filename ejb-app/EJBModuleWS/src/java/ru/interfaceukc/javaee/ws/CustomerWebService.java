@@ -22,28 +22,27 @@ import ru.interfaceukc.javaee.model.facades.CustomerFacadeRemote;
 @Stateless()
 public class CustomerWebService {
 
-    @EJB
-    CustomerFacadeRemote facade;
+    @EJB CustomerFacadeRemote facade;
     
-    @WebMethod(operationName = "find", action = "actionFind")
+    @WebMethod(operationName = "find", action = "find")
     public Customer find(@WebParam(name = "id") Integer id) {
         return facade.find(id);
     }
 
-    @WebMethod(operationName = "range")
+    @WebMethod(operationName = "findAll")
+    public List<Customer> findAll() {
+        return facade.findAll();
+    }
+
+    @WebMethod(operationName = "findRange")
     public List<Customer> findRange(
-            @WebParam(name = "from") Integer from, 
-            @WebParam(name = "to") Integer to) {
+                        @WebParam(name = "from")int from, 
+                        @WebParam(name = "to")int to) {
         return facade.findRange(new int[] {from, to});
     }
 
     @WebMethod(operationName = "count")
     public int count() {
         return facade.count();
-    }
-
-    @WebMethod(operationName = "findAll")
-    public List<Customer> findAll() {
-        return facade.findAll();
     }
 }

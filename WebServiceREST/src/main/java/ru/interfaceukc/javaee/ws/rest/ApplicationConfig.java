@@ -6,21 +6,22 @@
 package ru.interfaceukc.javaee.ws.rest;
 
 import java.util.Set;
+import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 /**
  *
  * @author Администратор
  */
-@javax.ws.rs.ApplicationPath("api")
+@ApplicationPath("api")
 public class ApplicationConfig extends Application {
 
-    @Override
-    public Set<Class<?>> getClasses() {
-        Set<Class<?>> resources = new java.util.HashSet<>();
-        addRestResourceClasses(resources);
-        return resources;
-    }
+//    @Override
+//    public Set<Class<?>> getClasses() {
+//        Set<Class<?>> resources = new java.util.HashSet<>();
+//        addRestResourceClasses(resources);
+//        return resources;
+//    }
 
     /**
      * Do not modify addRestResourceClasses() method.
@@ -30,6 +31,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(ru.interfaceukc.javaee.ws.rest.CustomerFacadeREST.class);
+        resources.add(ru.interfaceukc.javaee.ws.rest.CustomerSubResource.class);
         resources.add(ru.interfaceukc.javaee.ws.rest.DiscountCodeFacadeREST.class);
         resources.add(ru.interfaceukc.javaee.ws.rest.MicroMarketFacadeREST.class);
         resources.add(ru.interfaceukc.javaee.ws.rest.ServerLoggingFilter.class);

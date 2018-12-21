@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import ru.interfaceukc.javaee.model.Customer;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-12-21T16:27:42")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-12-21T16:45:05")
 @StaticMetamodel(MicroMarket.class)
 public class MicroMarket_ { 
 
